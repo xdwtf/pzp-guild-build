@@ -22,5 +22,4 @@ git clone -q --depth=1 "${UPSTREAM_REPO}"
 cd pzp-guild
 pip -q install --no-cache-dir -r req*.txt
 
-chmod +x x.sh
-./x.sh
+python3 -m guild & python3 web.py
