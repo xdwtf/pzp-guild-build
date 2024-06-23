@@ -5,9 +5,6 @@ if [ -z "${UPSTREAM_REPO}" ]; then
     exit 1
 fi
 
-echo "${GH_TOKEN}" > ~/.git-credentials
-git config --global credential.helper store
-
 if [ -d "pzp-guild" ]; then
     rm -rf pzp-guild
     echo "Removed older pzp-guild directory"
