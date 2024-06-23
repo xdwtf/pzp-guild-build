@@ -1,5 +1,7 @@
 FROM python:3.12.4-slim-bookworm
 
+RUN apt-get update && apt-get install -y git
+
 WORKDIR /app/
 
 # adding email and username to the bot
