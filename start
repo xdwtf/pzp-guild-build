@@ -1,25 +1,23 @@
-#!bin/bash
+#!/bin/bash
 
 if [ -z "${UPSTREAM_REPO}" ]; then
     echo "UPSTREAM_REPO var is not set or is empty"
-    exit
+    exit 1
 fi
 
-
 echo "${GH_TOKEN}" > ~/.git-credentials
-
 git config --global credential.helper store
-
 
 if [ -d "pzp-guild" ]; then
     rm -rf pzp-guild
-    echo "removed older pzp-guild dir"
+    echo "Removed older pzp-guild directory"
 fi
 
 export PIP_ROOT_USER_ACTION=ignore
 
 git clone -q --depth=1 "${UPSTREAM_REPO}"
 cd pzp-guild
+
 pip -q install --no-cache-dir -r req*.txt
 
 python3 -m guild & python3 web.py
