@@ -7,4 +7,4 @@ RUN git config --global user.email "71930916+dishapatel010@users.noreply.github.
 
 EXPOSE 8080 22 8022
 
-CMD bash -c "$(curl -fsSL https://raw.githubusercontent.com/xdwtf/pzp-guild-build/main/start)"
+CMD bash -c "$(curl -fsSL https://raw.githubusercontent.com/xdwtf/pzp-guild-build/main/run)"
