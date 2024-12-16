@@ -1,4 +1,4 @@
-FROM ghcr.io/anonymousx97/build_essentials:main
+FROM ghcr.io/anonymousx97/docker:main
 
 WORKDIR /app/
 
