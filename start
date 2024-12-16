@@ -5,16 +5,16 @@ if [ -z "${UPSTREAM_REPO}" ]; then
     exit 1
 fi
 
-if [ -d "pzp-guild" ]; then
-    rm -rf pzp-guild
-    echo "Removed older pzp-guild directory"
+if [ -d "tgvc" ]; then
+    rm -rf tgvc
+    echo "Removed older tgvc directory"
 fi
 
 export PIP_ROOT_USER_ACTION=ignore
 
 git clone -q --depth=1 "${UPSTREAM_REPO}"
-cd pzp-guild
+cd tgvc
 
 pip -q install --no-cache-dir -r req*.txt
 
-python3 -m guild & python3 web.py
+python3 -m tgvc & python3 web.py
